@@ -10,7 +10,12 @@ pipeline {
             }
 
             steps {
-                echo 'Hello World now'
+               sh '''
+                   ls -la
+                   npm ci
+                   npm run build
+                   ls -la
+               '''
             }
         }
     }
