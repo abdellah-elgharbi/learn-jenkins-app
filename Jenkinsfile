@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    envirment {
+    environment {
        NETFLY_SITE_ID = "471082cb-5387-418c-8a78-a5ed688df9cb"
        NETFLY_AUTH_TOKEN=credentials('app')
     }
