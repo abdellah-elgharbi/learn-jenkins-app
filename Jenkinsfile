@@ -16,6 +16,7 @@ pipeline {
                    npm run build
                    ls -la
                '''
+               stash name : 'Build-save' , includes : 'build/**'
             }
         }
         stage("Test"){
@@ -26,6 +27,7 @@ pipeline {
                 }
             }
             steps{
+                unstash 'Build-save'
                 sh '''
                     test -f build/index.html
                     npm test
