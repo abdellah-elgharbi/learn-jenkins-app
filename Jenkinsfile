@@ -50,7 +50,7 @@ pipeline {
             steps {
                 unstash 'Build-save'
                 sh '''
-                    npm install -g netlify-cli
+                    npm install netlify-cli
                     export NETLIFY_AUTH_TOKEN="$NETFLY_AUTH_TOKEN"
                     netlify deploy --site $NETFLY_SITE_ID --dir=build --prod
                 '''
