@@ -51,7 +51,7 @@ pipeline {
                 unstash 'Build-save'
                 sh '''
                     npm install netlify-cli
-                    netlify status
+                    node_modules/.bin/netlify status
                 '''
             }
         }
