@@ -29,6 +29,7 @@ pipeline {
             steps{
                 unstash 'Build-save'
                 sh '''
+                    npm ci
                     test -f build/index.html
                     npm test
                 '''
