@@ -51,8 +51,7 @@ pipeline {
                 unstash 'Build-save'
                 sh '''
                     npm install netlify-cli
-                    export NETLIFY_AUTH_TOKEN="$NETFLY_AUTH_TOKEN"
-                    netlify deploy --site $NETFLY_SITE_ID --dir=build --prod
+                    netlify status
                 '''
             }
         }
